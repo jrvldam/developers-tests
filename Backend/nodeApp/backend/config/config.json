@@ -1,0 +1,46 @@
+{
+
+  "mongo": {
+    "uri": "mongodb://",
+    "options": {
+      "user": "medlab",
+      "pass": "medlab"
+    }
+  },
+
+  "middleware": {
+    "router": {
+      "module": {
+        "arguments": [{ "directory": "path:./controllers" }]
+      }
+    },
+
+    "favicon": {
+      "enabled": false
+    },
+
+    "static": {
+      "enabled": false
+    },
+
+    "urlencoded": {
+      "enabled": false
+    },
+
+    "multipart": {
+      "enabled": false
+    },
+
+    "cookieParser": {
+      "enabled": false
+    },
+
+    "session": {
+      "enabled": false
+    },
+
+    "appsec": {
+      "enabled": false
+    }
+  }
+}
