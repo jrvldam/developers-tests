@@ -1,4 +1,4 @@
-### Backend Node test
+### MeteorJS App test
 #### Task:
 Create a basic meteor application using twitter APIs
 
