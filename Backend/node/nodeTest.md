@@ -30,12 +30,12 @@ framework (preferred express js)
 
 #### Instructions
 1. project should have two REST APIs
-a. /getTweets (should accept twitter name as the parameter and should also work
+* a. **/getTweets** (should accept twitter name as the parameter and should also work
 for more tweets and tweets between two dates, parameters
 you can define and
 mention them in ReadMe file in project folder)
-b. /getSummary/:username (this will be used to show data on UI)
-2. structure for getSummary
+* b. **/getSummary/:username** (this will be used to show data on UI)
+2. structure for **getSummary**
 ```
 {
     userSummary : {
@@ -63,10 +63,10 @@ b. /getSummary/:username (this will be used to show data on UI)
 3. We dont expect complicated UI basic UI will work
 4. UI for tweets should consist of profile image , username , date , tweet text
 5. UI for profile data should consist of data mentioned in userSummary and profileData
-6. please upload the code on github with ReadMe file with instructions on how to run
+6. please upload the code on github with **ReadMe** file with instructions on how to run
 the project and define the Rest APIs (route name , params , headers)
 #### More information
-1. getweets/:twittername (for storing and getting tweets)
+1. **getweets/:twittername (for storing and getting tweets)**
 
 At any given point of time if user calls this API he should see latest tweets from
 twitter database and you should store it in local mongodb
@@ -76,6 +76,6 @@ latest 50 tweets and tweets should be stored in mongodb
 * if user again enters same twitter name first it should check for new tweets using
 twitter API if NO NEW tweets then fetch it from db , if there are NEW tweets show
 get them store them in db and show on UI
-2. getSummary/:twittername (for showing tweets and profile details on UI)
+2. **getSummary/:twittername (for showing tweets and profile details on UI)**
 While calling this API user should get structurized data ( for structure check
 instructions) which can be used to show on UI
