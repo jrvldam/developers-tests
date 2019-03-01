@@ -1,10 +1,10 @@
 {
 
   "mongo": {
-    "uri": "mongodb://",
+    "uri": "mongodb+srv://cluster0-1ugkj.mongodb.net/developers-tests",
     "options": {
       "user": "medlab",
-      "pass": "medlab"
+      "pass": "DRFIiUiu5oyQw4hJ"
     }
   },
 
