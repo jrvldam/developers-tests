@@ -18,4 +18,5 @@ Necesitaremos el proyecto con todo el código para poder probarlo. Podéis envia
 Un saludo.
 
 ### Observaciones
-node.js v6 o superior.
+* node.js v6 o superior.
+* Se proporciona una conexión a un nodo de MongoDB de sólo lectura para descargar las colecciones necesarias. La conexión para desarrolar deberá hacerse de manera local.
