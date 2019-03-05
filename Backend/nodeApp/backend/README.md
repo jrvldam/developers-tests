@@ -20,3 +20,28 @@ Un saludo.
 ### Observaciones
 * node.js v6 o superior.
 * Se proporciona una conexión a un nodo de MongoDB de sólo lectura para descargar las colecciones necesarias. La conexión para desarrolar deberá hacerse de manera local.
+
+
+Backend developers tests
+==============
+
+## Description of the test
+
+Here we provide you with a mini-project node.js that defines an API to access a database of shops.
+
+It is requested:
+
+1. complete the application code necessary for passing the tests
+1. Add a new field `category` to the commerce. This field can have the values CAFE or PUB.
+1. Modify the tests and the application code necessary for our API to support GET/? lat & lng & category calls
+1. Modify the tests and the application code necessary to add to our API a GET /:id method that recovers the data of a commerce
+
+The organization and techniques used will be valued.
+
+We will need the project with all the code to be able to execute it. You can send a compressed file.
+
+A greeting.
+
+### Observations
+node.js v6 or higher
+A connection to a read-only MongoDB node is provided to download the necessary collections. The connection to develop must be done locally.
