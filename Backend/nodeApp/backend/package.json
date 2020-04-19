@@ -11,6 +11,7 @@
     "start:dev": "nodemon index.js"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "bluebird": "3.5.0",
     "express": "^4.17.1",
     "kraken-js": "^2.2.0",
@@ -34,5 +35,14 @@
   "author": {
     "name": "MedlabMG IT",
     "email": "info@medlabmg.com"
+  },
+  "mocha": {
+    "recursive": true,
+    "ui": "bdd",
+    "reporter": "spec",
+    "check-leaks": true,
+    "globals": "projection",
+    "timeout": 6000,
+    "growl": true
   }
 }
