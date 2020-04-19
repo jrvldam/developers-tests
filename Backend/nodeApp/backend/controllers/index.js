@@ -14,10 +14,10 @@ module.exports = (router) => {
   router.get('/', validateParams, findSearch)
 }
 
-async function findSearch(req, res) {
+function findSearch(req, res) {
   const { lng, lat, category } = req.query
 
-  Commerce.find({ location: [lng, lat], category })
+  Commerce.findByLocation({ lng, lat, category })
     .then(result => {
       result.length
         ? res.json(result)

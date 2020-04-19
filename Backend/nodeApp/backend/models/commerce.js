@@ -15,14 +15,15 @@ const commerceSchema = new mongoose.Schema({
 
 commerceSchema.index({ location: '2dsphere' })
 
-commerceSchema.statics.findByLocation = function({lat, lng, distance = 1000000, limit= 100}) {
+commerceSchema.statics.findByLocation = function({category, lat, lng, distance = 1000000, limit= 100}) {
   let criteria = {
     location: {
       $nearSphere: {
         $geometry: { type: 'Point', coordinates: [lng, lat] },
         $maxDistance: distance,
       }
-    }
+    },
+    category,
   }
 
   return this.find(criteria)
