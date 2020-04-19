@@ -7,6 +7,10 @@ const commerceSchema = new mongoose.Schema({
   name:         { type: String },
   description:  { type: String },
   location:     { type: [Number] },
+  category:     {
+    type: String,
+    enum: ['CAFE', 'PUB'],
+  },
 })
 
 commerceSchema.index({ location: '2dsphere' })

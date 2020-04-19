@@ -3,7 +3,7 @@
 const Commerce = require('../models/commerce')
 
 function validateParams(req, res, next) {
-  if (!req.query.lat && !req.query.lng) {
+  if (!req.query.lat || !req.query.lng || !req.query.category) {
     return res.status(400).json({ error: 'Invalid search params' })
   }
 
@@ -15,9 +15,9 @@ module.exports = (router) => {
 }
 
 async function findSearch(req, res) {
-  const { lng, lat } = req.query
+  const { lng, lat, category } = req.query
 
-  Commerce.find({ location: [lng, lat] })
+  Commerce.find({ location: [lng, lat], category })
     .then(result => {
       result.length
         ? res.json(result)

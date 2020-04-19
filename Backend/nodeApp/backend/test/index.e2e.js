@@ -39,9 +39,9 @@ describe('Commerce e2e', () => {
     context('when existing commerces in given location', () => {
       beforeEach(() => {
         return Promise.all([
-          createCommerce({name: 'Bar Tolo', location: [-3.0000, 40.0000]}),
-          createCommerce({name: 'Bar Eto',  location: [-3.0000, 40.0000]}),
-          createCommerce({name: 'Bar Ucho', location: [30.0000, 40.0000]}),
+          createCommerce({name: 'Bar Tolo', location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Eto',  location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Ucho', location: [30.0000, 40.0000], category: 'PUB'}),
         ])
       })
 
@@ -49,6 +49,7 @@ describe('Commerce e2e', () => {
         let latlng = {
           lat: 40.000,
           lng: -3.000,
+          category: 'PUB',
         }
 
         return request(app)
@@ -68,9 +69,9 @@ describe('Commerce e2e', () => {
     context('when non existing commerces in given location', () => {
       beforeEach(() => {
         return Promise.all([
-          createCommerce({name: 'Bar Tolo', location: [-3.0000, 40.0000]}),
-          createCommerce({name: 'Bar Eto',  location: [-3.0000, 40.0000]}),
-          createCommerce({name: 'Bar Ucho', location: [30.0000, 40.0000]}),
+          createCommerce({name: 'Bar Tolo', location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Eto',  location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Ucho', location: [30.0000, 40.0000], category: 'PUB'}),
         ])
       })
 
@@ -78,6 +79,7 @@ describe('Commerce e2e', () => {
         let latlng = {
           lat: 77.7777,
           lng: 77.7777,
+          category: 'PUB',
         }
 
         return request(app)
@@ -93,6 +95,7 @@ describe('Commerce e2e', () => {
       name: 'Bar Tolo',
       description: 'Lounge bar ibicenco con coctails fashionables',
       location: [-3.0000, 40.0000],
+      category: 'PUB',
     }))
   }
 })
