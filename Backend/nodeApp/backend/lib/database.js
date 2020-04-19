@@ -8,7 +8,13 @@ function bootstrap(mongoOptions) {
   let mongoUri  = mongoOptions.uri
   let mongoOpts = mongoOptions.options || {}
 
-  mongoose.connect(mongoUri, mongoOpts)
+  mongoose.connect(
+    mongoUri,
+    Object.assign({}, mongoOpts, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    })
+  )
 }
 
 function shutdown() {

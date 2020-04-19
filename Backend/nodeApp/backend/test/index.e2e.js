@@ -19,7 +19,7 @@ describe('Commerce e2e', () => {
 
   afterEach(() => {
     return Promise.all([
-      Commerce.remove()
+      Commerce.deleteMany()
     ])
   })
 
