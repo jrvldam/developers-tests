@@ -90,6 +90,45 @@ describe('Commerce e2e', () => {
     })
   })
 
+  describe('GET /:id', () => {
+    context('when providing id commerce', () => {
+      let items
+      beforeEach(() => {
+        return Promise.all([
+          createCommerce({name: 'Bar Tolo', location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Eto',  location: [-3.0000, 40.0000], category: 'PUB'}),
+          createCommerce({name: 'Bar Ucho', location: [30.0000, 40.0000], category: 'PUB'}),
+        ])
+          .then(res => {
+            items = res
+          })
+      })
+      it('should get a commerce', () => {
+        const commerce = items[0]
+
+        return request(app)
+          .get(`/${commerce._id.toString()}`)
+          .expect(200)
+          .expect('Content-Type', /json/)
+          .then((res) => {
+            expect(res.body._id).to.be.equal(commerce._id.toString())
+          })
+      })
+
+      it('should return not found if id does not match', () => {
+        return request(app)
+          .get('/5e9ce6ef8fc481ea4dee048c')
+          .expect(404)
+      })
+    })
+
+    it('should return not found if wrong id format', () => {
+      return request(app)
+        .get('/5e9ce6ef8fc481e')
+        .expect(404)
+    })
+  })
+
   function createCommerce(newCommerce) {
     return Commerce.create(_.defaults(newCommerce, {
       name: 'Bar Tolo',
